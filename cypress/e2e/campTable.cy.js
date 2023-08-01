@@ -1,7 +1,21 @@
 ///  <reference types = "Cypress"/>
 describe('Login Page', () => {
     beforeEach(() => {
-        cy.wait(2000);
+        cy.visit('https://dev-app.pickmyad.com/auth/admin/login', { failOnStatusCode: false })
+        cy.get('.google-btn').click()
+        cy.origin("https://accounts.google.com/o/oauth2/v2/auth/", () => {
+            Cypress.on('uncaught:exception', (err, runnable) => {
+                return false;
+            })
+            //login
+            cy.get('#identifierId').type('gayathri@pickmyad.com')
+            cy.get('.VfPpkd-vQzf8d').contains('Next').click()
+            cy.wait(20000)
+            cy.get('body').type('Sajith!0708')
+            cy.get('.VfPpkd-vQzf8d').contains('Next').click()
+            cy.wait(20000)
+        })
+        
 
     });
 
