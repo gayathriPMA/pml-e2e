@@ -31,12 +31,14 @@ module.exports = defineConfig({
   e2e: {
     experimentalSessionAndOrigin: true,
     chromeWebSecurity: false,
+   
     failOnStatusCode: false,
     experimentalModifyObstructiveThirdPartyCode: true,
     defaultCommandTimeout: 10000,
     pageLoadTimeout: 100000,
 
     baseUrl: "https://dev-app.pickmy.link/auth/v3/login",
+    
 
     // setupNodeEvents(on, config) {
     //   require("cypress-localstorage-commands/plugin")(on, config);
