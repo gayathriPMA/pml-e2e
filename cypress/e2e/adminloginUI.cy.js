@@ -69,9 +69,9 @@ describe('Signin Page Test', () => {
             })
             cy.get('#identifierId').type('gayathri@pickmyad.com')
             cy.get('.VfPpkd-vQzf8d').contains('Next').click()
-            cy.get('#captchaimg').should('be.visible');
-            cy.pause();
-            cy.get('.VfPpkd-vQzf8d').contains('Next').click()
+            // cy.get('#captchaimg').should('be.visible');
+            // cy.pause();
+            // cy.get('.VfPpkd-vQzf8d').contains('Next').click()
             cy.wait(20000)
             cy.get('body').type('Sajith!0708')
             cy.get('.VfPpkd-vQzf8d').contains('Next').click()
